@@ -22,42 +22,42 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_weight="1"
+            android:orientation="vertical"
             android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/is_exit"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
-                    android:onClick="exit"
-                    android:background="@drawable/btn_exit"/>
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_exit"
+                    android:onClick="exit" />
 
                 <Button
                     android:id="@+id/BlueTooth_connect"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
-                    android:onClick="bluetooth_connect"
-                    android:background="@drawable/btn_bluetooth_connect"/>
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_bluetooth_connect"
+                    android:onClick="bluetooth_connect" />
 
                 <Button
                     android:id="@+id/is_video"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
-                    android:onClick="play_video"
-                    android:background="@mipmap/no_video"/>
+                    android:layout_marginTop="20dp"
+                    android:background="@mipmap/no_video"
+                    android:onClick="play_video" />
 
 
             </LinearLayout>
@@ -71,9 +71,9 @@
                     android:id="@+id/left_round"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:background="@mipmap/leftround"
-                    android:layout_gravity="center"
                     app:areaBackground="#00000000"
                     app:rockerBackground="@mipmap/dot_green"
                     app:rockerCallBackMode="CALL_BACK_MODE_STATE_CHANGE"
