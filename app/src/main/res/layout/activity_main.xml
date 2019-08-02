@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.jias.uav.CustomVideoView
+        android:id="@+id/videoview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/bac"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:background="@mipmap/bac">
+
+        <!--左边第一块-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/is_exit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="exit"
+                    android:background="@drawable/btn_exit"/>
+
+                <Button
+                    android:id="@+id/BlueTooth_connect"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="bluetooth_connect"
+                    android:background="@drawable/btn_bluetooth_connect"/>
+
+                <Button
+                    android:id="@+id/is_video"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="play_video"
+                    android:background="@mipmap/no_video"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <com.jias.uav.RockerView
+                    android:id="@+id/left_round"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@mipmap/leftround"
+                    android:layout_gravity="center"
+                    app:areaBackground="#00000000"
+                    app:rockerBackground="@mipmap/dot_green"
+                    app:rockerCallBackMode="CALL_BACK_MODE_STATE_CHANGE"
+                    app:rockerScale="0.4" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--中间第二块-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7">
+
+                <TextView
+                    android:id="@+id/state"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="未连接"
+                    android:textColor="#9E2927"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.8"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/cursor"
+                    android:layout_weight="1.2">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:weightSum="5">
+
+                    <TextView
+                        android:id="@+id/text_position_left_first"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:text=""
+                        android:textSize="18sp"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/text_position_left"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:text=""
+                        android:textSize="18sp"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/text_position_center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textColor="#FA2E29"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/text_position_right"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:text=""
+                        android:textSize="18sp"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/text_position_right_first"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:text=""
+                        android:textSize="18sp"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5.5"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:weightSum="6">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/left_trangle"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@mipmap/height"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/fly_height"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="35"
+                            android:textSize="16sp"
+                            android:textColor="#fff"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/right_trangle"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/visible_seekbar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:id="@+id/youmen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:text="油门值：0"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/henggun"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:text="横滚值：0"
+                            android:textSize="18sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:layout_weight="1.5">
+
+                        <com.jias.uav.VerticalSeekBar
+                            android:id="@+id/verticalSeekBar1"
+                            android:layout_width="15dp"
+                            android:layout_height="180dp"
+                            android:gravity="center"
+                            android:max="900"
+                            android:progressDrawable="@drawable/zdy_seekbar"
+                            android:thumb="@mipmap/seekbar" />
+
+                        <com.jias.uav.VerticalSeekBar
+                            android:id="@+id/verticalSeekBar2"
+                            android:layout_width="15dp"
+                            android:layout_height="180dp"
+                            android:layout_marginLeft="20dp"
+                            android:gravity="center"
+                            android:max="900"
+                            android:progressDrawable="@drawable/zdy_seekbar"
+                            android:thumb="@mipmap/seekbar" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--底部状态栏-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <Button
+                    android:id="@+id/fly_start_stop"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:onClick="fly_start_stop"
+                    android:background="@drawable/btn_stop"/>
+
+                <Button
+                    android:id="@+id/fly_speech"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:onClick="speech"
+                    android:background="@drawable/btn_speech"/>
+
+                <Button
+                    android:id="@+id/fly_takeoff"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:onClick="fly_takeoff"
+                    android:background="@drawable/btn_takeoff"/>
+
+                <Button
+                    android:id="@+id/fly_address"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:onClick="address"
+                    android:background="@drawable/btn_adress"/>
+
+                <Button
+                    android:id="@+id/fly_camera"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:onClick="camera"
+                    android:background="@drawable/btn_camera"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!--右边第三块-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:id="@+id/baidu_map"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="right"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5">
+
+                        <com.baidu.mapapi.map.MapView
+                            android:id="@+id/bmapView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp"
+                            android:visibility="gone"></com.baidu.mapapi.map.MapView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="0.5"
+                        android:gravity="right">
+                        <Button
+                            android:id="@+id/setting"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="10dp"
+                            android:onClick="sys_set"
+                            android:background="@drawable/btn_setting"/>
+
+                        <Button
+                            android:id="@+id/circuit"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="10dp"
+                            android:onClick="mod_circuit"
+                            android:background="@drawable/btn_change"/>
+
+                        <Button
+                            android:id="@+id/is_visible"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="10dp"
+                            android:onClick="seekbar_is_visibile"
+                            android:background="@drawable/btn_visible"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="right"
+                android:layout_weight="1">
+
+                <com.jias.uav.RockerView
+                    android:id="@+id/right_round"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/rightround"
+                    app:areaBackground="#00000000"
+                    app:rockerBackground="@mipmap/dot_green"
+                    app:rockerCallBackMode="CALL_BACK_MODE_STATE_CHANGE"
+                    app:rockerScale="0.4" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
+

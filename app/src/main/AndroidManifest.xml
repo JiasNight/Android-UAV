@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jias.uav">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!--//获取设备网络状态，禁用后无法获取网络状态 -->
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--//网络权限，当禁用后，无法进行检索等相关业务 -->
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <!--//读取设备硬件信息，统计数据 -->
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+    <!--//读取系统信息，包含系统版本等信息，用作统计 -->
+    <uses-permission
+        android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!--//获取设备的网络状态，鉴权所需网络代理 -->
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--//允许sd卡写权限，需写入地图数据，禁用后无法显示地图 -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--//允许sd卡读权限，需读取地图数据，禁用后无法显示地图 -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--//获取统计数据 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS" />
+    <!--//鉴权所需该权限获取进程列表 -->
+    <uses-permission
+        android:name="android.permission.GET_TASKS" />
+    <!--//使用步行AR导航，配置Camera权限 -->
+    <uses-permission
+        android:name="android.permission.CAMERA" />
+    <!--//网络定位 -->
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--//GPS定位 -->
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission
+        android:name="android.permission.CHANGE_WIFI_STATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.jias.uav.StartActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jias.uav.MainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+
+        <activity
+            android:name="com.jias.uav.SettingsActivity"
+            android:screenOrientation="landscape"
+            android:label="@string/title_activity_settings">
+        </activity>
+
+
+        <!--//配置应用的AppKey,唯一的，需申请 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="7s8G6snipnxjB4LYYYrOlwWAeXtThyZp" />
+
+        <!--//service组件，固定配置 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+        </service>
+    </application>
+
+</manifest>
